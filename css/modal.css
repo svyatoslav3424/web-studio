@@ -17,6 +17,8 @@ body.is-modal-open{
 
     opacity: 0;
     pointer-events: none;
+
+    transition: opacity 150ms linear;
 }
 
 body.is-modal-open .backdrop {
@@ -32,6 +34,14 @@ body.is-modal-open .backdrop {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px 0px rgba(0, 0, 0, 0.20);
     padding: 40px;
     position: relative;
+
+    transform: scale(0.95);
+
+    transition: transform 150ms linear;
+}
+
+body.is-modal-open .modal {
+    transform: scale(1);
 }
 
 .close-btn{
