@@ -136,11 +136,20 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-direction: column;
 }
 
-.header-social-list {
+.header-social-wrapper{
   display: none;
+  color: #2196F3;
+  font-size: 18px;
+  line-height: 1.22; /* 122.222% */
+  letter-spacing: 0.02em;
 }
+
+/* .header-social-list {
+  display: none;
+} */
 
 .email,
 .phone,
@@ -842,6 +851,11 @@ img {
 
   .contact-head .email-link {
     font-size: 24px;
+  }
+
+  .header-social-wrapper{
+    display: block;
+    
   }
 }
 
