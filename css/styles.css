@@ -117,11 +117,7 @@ img {
   display: flex;
   gap: 30px;
   color: #757575;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   letter-spacing: 0.48px;
 }
 
@@ -136,12 +132,31 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
-.header-social-wrapper{
+.header-links {
+  /* display: flex; */
   display: none;
-  color: #2196F3;
+  gap: 15px;
+}
+
+.header-link {
+  color: #2196f3;
+  font-size: 18px;
+  padding: 0 10px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+}
+
+.header-link:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.header-social-wrapper {
+  display: none;
+  color: #2196f3;
   font-size: 18px;
   line-height: 1.22; /* 122.222% */
   letter-spacing: 0.02em;
@@ -393,7 +408,7 @@ img {
   background: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
-  margin-top: 94px;
+  margin-top: 60px;
 }
 
 .section-client {
@@ -750,11 +765,14 @@ img {
     flex-direction: column;
 
     background: #fff;
+    z-index: 10;
   }
 
   body.is-menu-open .header-content {
+    height: 100vh;
     flex-direction: column;
-    gap: 302px;
+    padding: 48px 40px;
+    align-items: start;
   }
 
   .contact-head {
@@ -776,7 +794,7 @@ img {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0px 20px;
+    padding: 10px 20px;
   }
 
   .client-list {
@@ -804,12 +822,14 @@ img {
   }
 
   .navigation-bar {
+    align-items: center;
     justify-content: space-between;
     gap: 0;
     width: 100%;
   }
 
   body.is-menu-open .navigation-bar {
+    align-items: start;
     flex-direction: column;
     gap: 35px;
     font-size: 40px;
@@ -820,6 +840,9 @@ img {
   }
 
   body.is-menu-open .menu-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 15px;
     display: block;
   }
 
@@ -853,14 +876,27 @@ img {
     font-size: 24px;
   }
 
-  .header-social-wrapper{
+  .header-social-wrapper {
     display: block;
-    
+  }
+
+  body.is-menu-open .header-links {
+    display: block;
+    margin-left: -10px;
+  }
+
+  .contact-icon-wrapper {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  body.is-menu-open {
+    overflow: hidden;
   }
 }
 
-/* @media screen and (min-width: 410px) and (max-width: 600px){
-    .client-item {
-        flex-wrap: nowrap;
-    }
-} */
+@media screen and (max-width: 380px) {
+  body.is-menu-open .header-content {
+    padding: 50px 20px 24px;
+  }
+}
